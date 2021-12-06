@@ -43,12 +43,17 @@ function App() {
     // setTodos(prevState => [...prevState, newTodo]) --> mutate existing array
   }
 
+  const removeTodoHandler = (todoId: string) => {
+    console.log("Remove selected todo");
+    setTodos((prevTodo) => prevTodo.filter((todo) => todo.id !== todoId));
+  };
+
   console.log(todos)
 
   return (
     <Fragment>
       <NewTodo onAddTodo={addTodoHandler}/>
-      <Todos items={todos} />
+      <Todos items={todos} onRemoveTodo={removeTodoHandler}/>
     </Fragment>
   );
 }
