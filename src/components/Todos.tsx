@@ -1,5 +1,6 @@
 import Todo from "./models/todo";
 import TodoList from "./TodoItem";
+import classes from './Todos.module.css';
 
 // ============================== Notes ==============================
 // React.FC - makes it clear that this here is a functional component 
@@ -19,7 +20,7 @@ import TodoList from "./TodoItem";
 
 const Todos: React.FC<{ items: Todo[] }> = (props) => {
   return (
-    <ul>
+    <ul className={classes.todos}>
       {props.items.map((item) => {
         console.log(item);
         return <TodoList key={item.id}>{item.text}</TodoList>;
