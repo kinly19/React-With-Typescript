@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import classes from './NewTodo.module.css';
 
 // ============================== Notes ==============================
 // https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events
@@ -31,7 +32,7 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form className={classes.form}onSubmit={submitHandler}>
       <label>Add Todo</label>
       <input type="text" id="text" ref={todoTextInput}></input>
       <button>Add Todo</button>
